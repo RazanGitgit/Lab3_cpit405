@@ -8,6 +8,7 @@
     <title>Razan Aljezani | CV</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="interaction.js" defer></script>
 </head>
 
 
@@ -55,6 +56,10 @@
             <a href="#contact">Contact</a>
 
         </nav>
+        <div class="cv-controls">
+            <button type="button" id="theme-toggle">Dark Mode</button>
+            <button type="button" id="print-cv">Print / Save as PDF</button>
+        </div>
 
     </header>
 
@@ -66,20 +71,25 @@
             <h2>About Me</h2>
 
             <p class="about-text">
-
                 I am an Information Technology student at
                 King Abdulaziz University with a strong interest
                 in creative problem-solving and using technology
                 as a tool for innovation.
 
-                Passionate about human-centered thinking in
-                designing solutions that address real user needs.
+                <span id="about-extra" hidden>
+                    Passionate about human-centered thinking in
+                    designing solutions that address real user needs.
 
-                Eager to learn, explore new technologies,
-                and contribute creative ideas in a practical
-                training environment.
-
+                    Eager to learn, explore new technologies,
+                    and contribute creative ideas in a practical
+                    training environment.
+                </span>
             </p>
+
+            <button type="button" id="about-toggle"
+                    aria-controls="about-extra" aria-expanded="false">
+                Show More
+            </button>
 
         </section>
 
@@ -223,64 +233,13 @@
             <h2>Projects</h2>
 
 
-            <article class="project-card">
+<div class="project-filters" role="group" aria-label="Filter projects">
+    <button type="button" value="All" aria-pressed="true">All</button>
+    <button type="button" value="Web" aria-pressed="false">Web</button>
+    <button type="button" value="Programming" aria-pressed="false">Programming</button>
+</div>
 
-                <h3>
-                    Service Order Management and Tracking System
-                </h3>
-
-                <p>
-
-                    Developed a Java-based system enabling staff
-                    to manage service orders, update order statuses,
-                    send customer notifications, and collect
-                    post-service ratings.
-
-                </p>
-
-                <div class="project-skills">
-
-                    <span>Java Programming</span>
-
-                    <span>Unit Testing</span>
-
-                    <span>Agile Methodology</span>
-
-                    <span>SDLC</span>
-
-                    <span>UML Diagrams</span>
-
-                </div>
-
-            </article>
-
-
-            <article class="project-card">
-
-                <h3>
-                    VIP Barbershop Management System
-                </h3>
-
-                <p>
-
-                    Designed a premium, user-centered digital
-                    experience for the barbershop service industry.
-
-                </p>
-
-                <div class="project-skills">
-
-                    <span>UX/UI Design</span>
-
-                    <span>System Analysis & Design</span>
-
-                    <span>UML Diagrams</span>
-
-                    <span>User-Centered Design</span>
-
-                </div>
-
-            </article>
+<div id="project-list"></div>
 
         </section>
 
